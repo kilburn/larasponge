@@ -1,0 +1,4 @@
+suites:
+  larasponge:
+    namespace: Larasponge
+    psr4_prefix: Larasponge

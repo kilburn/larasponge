@@ -1,0 +1,23 @@
+{
+    "name": "kilburn/larasponge",
+    "description": "Sanitize your FormRequest inputs in Laravel 5",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Marc Pujol",
+            "email": "kilburn@la3.org"
+        }
+    ],
+    "require": {
+        "laravel/framework": "~5.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Larasponge\\": "src/"
+        }
+    },
+    "minimum-stability": "stable",
+    "require-dev": {
+        "phpspec/phpspec": "~2.0"
+    }
+}
