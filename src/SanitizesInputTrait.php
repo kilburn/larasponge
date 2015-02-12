@@ -14,13 +14,6 @@ trait SanitizesInputTrait
 	protected $sanitized;
 
 	/**
-	 * The sanitizer to use.
-	 *
-	 * @var Sanitizer
-	 */
-	protected $sanitizer;
-
-	/**
 	 * @param $factory \Illuminate\Validation\Factory
 	 * @return \Illuminate\Validation\Validator
 	 */
@@ -38,8 +31,9 @@ trait SanitizesInputTrait
 	 */
 	protected function sanitize()
 	{
-		if (!is_null($this->sanitizer)) {
-			return $this->sanitized = $this->sanitizer->sanitize($this->all());
+		$sanitizer = $this->getSanitizer();
+		if (!is_null($sanitizer)) {
+			return $this->sanitized = $sanitizer->sanitize($this->all());
 		}
 
 		return $this->all();
@@ -62,5 +56,10 @@ trait SanitizesInputTrait
 	 * @return array
 	 */
 	public abstract function all();
+
+	/**
+	 * @return Sanitizer
+	 */
+	public abstract function getSanitizer();
 
 }
